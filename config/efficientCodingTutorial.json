@@ -1,0 +1,16 @@
+[
+    {
+        "flavor": "",
+        "hook": "",
+        "importance": "",
+        "localHookTemplate": "config/efficientCodingTutorialLocalHookTemplate.m",
+        "printLocalHookOutput": "1",
+        "name": "efficientCodingTutorial",
+        "pathPlacement": "append",
+        "subfolder": "code",
+        "toolboxRoot": "",
+        "type": "git",
+        "update": "",
+        "url": ""
+    }
+]
