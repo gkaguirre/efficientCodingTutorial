@@ -14,10 +14,12 @@
 % 2. stimulus noise added
 
 
+clear
+close all
 
 %% PARMS
 % stimulus noise - vonMises
-stim_noise = 1; % flag; set this to 0 for kappa1>600;
+stim_noise = 0; % flag; set this to 0 for kappa1>600;
 k_stim = 10; 
 
 % sensory noise - vonMises
