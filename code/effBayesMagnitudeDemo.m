@@ -14,17 +14,17 @@ clear
 %% PARMS
 
 % prior exponent
-k = 2;
+k = -2;
 
 % Low frequency roll-off (Hz) of the prior
 rolloffHz = 2;
 
 % stimulus noise - Gaussian
 stim_noise = 0; % flag;
-sigma_stim = 0.00; 
+sigma_stim = 0.01; 
 
 % sensory noise - Gaussian
-sigma_sen = 0.025;
+sigma_sen = 0.015;
 
 % Flicker frequency range
 xRangeLinear = [1 32];
@@ -51,7 +51,7 @@ m = x;  % row
 % prior
 % 1/f^2 distribution of temporal frequency
 %
-myFun = @(x) 1./10.^x.^k;
+myFun = @(x) 10.^x.^k;
 p = myFun(x0);
 rolloffIdx = find(10.^x>=rolloffHz,1);
 p(1:rolloffIdx) = p(rolloffIdx);
@@ -141,7 +141,7 @@ legend({'prior','bias'});
 xlabel('stimulus variable [log Hz]');
 ylabel('bias [Hz] | pdf prior');
 title('prior, bias, and variance');
-xlim([0 2]);
+%xlim([0 2]);
 
 % some example dstribution p_thh_gv_th (@ th(600))
 subplot(3,1,2);
@@ -154,7 +154,6 @@ xlabel('stimulus variable [log Hz]');
 ylabel('prob density');
 legend({'estimate distribution','mean','true','max'});
 title('estimate distribution for example stimulus frequency');
-xlim([0 2]);
 
 
 % full distribution
