@@ -124,7 +124,7 @@ p_thh_gv_th = repmat(c,nSamples,1) .* p_m_gv_th;
     
 % expectation and bias and variance
 %% GKA GUESS AS TO HOW TO MAP EXPECTATION TO THETA DOMAIN
-E_thh_gv_th = range(x0)*mean(p_thh_gv_th.* repmat(th',nSamples,1),2)+min(x0);
+E_thh_gv_th = max(p_thh_gv_th.* repmat(th',nSamples,1),[],2);
 bias = E_thh_gv_th-th;
 
 
